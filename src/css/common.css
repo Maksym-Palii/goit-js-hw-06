@@ -23,7 +23,6 @@ button {
   cursor: pointer;
 }
 
-
 .gallery{
   padding: 0;
   list-style: none;
@@ -32,7 +31,6 @@ button {
   gap: 32px;
   justify-content: center;
 }
-
 
 .img{
   display: block;
