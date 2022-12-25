@@ -11,21 +11,22 @@ const mainBoxEl = document.querySelector("#boxes");
 createBtnEl.addEventListener("click", createBoxes);
 destroyBtnEl.addEventListener("click", destroyEl);
 
-const amount = Number(controlsEl.value);
-
 function createBoxes() {
-  let boxEl = document.createElement("div");
+  const amount = Number(controlsEl.value);
   let size = 30;
-  boxEl.style.width = `${size}px`;
-  boxEl.style.height = `${size}px`;
-  boxEl.style.backgroundColor = getRandomHexColor();
+  const arrBoxEl = [];
 
-  // for (let i = 0; i <= amount; i += 1) {
-  //   boxEl += i;
-  //   size += 10;
-  // }
+  for (let i = 0; i < amount; i += 1) {
+    let boxEl = document.createElement("div");
 
-  mainBoxEl.append(boxEl);
+    boxEl.style.width = `${size}px`;
+    boxEl.style.height = `${size}px`;
+    boxEl.style.backgroundColor = getRandomHexColor();
+    size += 10;
+    arrBoxEl.push(boxEl);
+  }
+
+  mainBoxEl.append(...arrBoxEl);
 }
 
 function destroyEl() {

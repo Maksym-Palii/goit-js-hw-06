@@ -9,11 +9,23 @@ const ingredients = [
 
 const listEl = document.querySelector("#ingredients");
 
+// const ingredientsEl = ingredients.map((ingredient) => {
+//   const itemEl = document.createElement("li");
+//   itemEl.textContent = `${ingredient}`;
+//   itemEl.classList.add("item");
+//   return itemEl;
+// });
+
+// listEl.append(...itemEl);
+
 const ingredientsEl = ingredients.forEach((ingredient) => {
+  const arrItemEl = [];
   const itemEl = document.createElement("li");
   itemEl.textContent = `${ingredient}`;
   itemEl.classList.add("item");
-  listEl.append(itemEl);
+
+  arrItemEl.push(itemEl);
+  listEl.append(...arrItemEl);
 });
 
 console.log(listEl);
